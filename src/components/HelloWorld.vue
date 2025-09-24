@@ -9,10 +9,13 @@ defineProps({
 
 <template>
   <div class="greetings">
-    <h1 class="green">Eu estou dentro do Debian</h1>
+    <h1 class="green">Aplicação Vue dentro do Debian via Docker</h1>
     <h3>
-      É exatamente isso! Essa aplicacao de vue.js (frontned) esta rodando dentro de um sistema operacional debian que esta rodando dentro do meu windows 11
+      Esta interface está sendo servida por um container Docker baseado em Debian, em execução no WSL2 do meu Windows 11. Tudo o que você vê aqui chega ao navegador pela porta 3000.
     </h3>
+    <p>
+      A ideia da demo é mostrar como o Docker simplifica a criação de ambientes Linux isolados mesmo dentro do Windows, deixando o fluxo de desenvolvimento consistente e repetível.
+    </p>
   </div>
 </template>
 
@@ -29,13 +32,15 @@ h3 {
 }
 
 .greetings h1,
-.greetings h3 {
+.greetings h3,
+.greetings p {
   text-align: center;
 }
 
 @media (min-width: 1024px) {
   .greetings h1,
-  .greetings h3 {
+  .greetings h3,
+  .greetings p {
     text-align: left;
   }
 }
