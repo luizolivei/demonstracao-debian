@@ -1,29 +1,35 @@
-# debian-apresentacao
+# Demonstração: Docker + Debian + Vue.js
 
-This template should help get you started developing with Vue 3 in Vite.
+Este repositório mostra como subir uma aplicação Vue 3 dentro de um ambiente Debian utilizando Docker (perfeito para apresentar o fluxo com WSL no Windows 11). A aplicação roda em modo de desenvolvimento e fica acessível no navegador pela porta **3000**.
 
-## Recommended IDE Setup
+## Requisitos
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [Node.js 20+](https://nodejs.org/) (apenas se desejar rodar sem Docker)
+- [Docker](https://docs.docker.com/engine/install/) e [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Customize configuration
+## Executando com Docker
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+```bash
+docker compose up --build
+```
 
-## Project Setup
+Após o build a aplicação ficará disponível em [http://localhost:3000](http://localhost:3000).
 
-```sh
+Se fizer alterações no código, basta reiniciar o serviço (`Ctrl+C` e `docker compose up --build` novamente) para atualizar o que está no container.
+
+## Execução direta (opcional)
+
+```bash
 npm install
+npm run dev -- --host
 ```
 
-### Compile and Hot-Reload for Development
+O servidor local também usará a porta [http://localhost:3000](http://localhost:3000).
 
-```sh
-npm run dev
-```
+## Build de produção
 
-### Compile and Minify for Production
-
-```sh
+```bash
 npm run build
 ```
+
+Os arquivos gerados ficarão em `dist/`.
